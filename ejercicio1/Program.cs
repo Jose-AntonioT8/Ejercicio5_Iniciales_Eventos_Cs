@@ -28,13 +28,13 @@ namespace ejercicio1
             {
                 if (TransaccionFinalizada != null) 
                 {
-                    TransaccionFinalizada(this, new TransaccionEventArgs() { transaccion = transaccion_ }); // 
+                    TransaccionFinalizada(this, new TransaccionEventArgs() { transaccion = transaccion_ }); 
                 }
             }
 
             public void Pago(Transaccion transaccion_)
             {
-                Console.WriteLine($"ID transacción: {transaccion_.identificador} con fecha: {transaccion_.fechaTransaccion}"); // Mensaje añadido para claridad
+                Console.WriteLine($"ID transacción: {transaccion_.identificador} con fecha: {transaccion_.fechaTransaccion}"); 
                 Thread.Sleep(2000); 
                 Console.WriteLine("Pago aprobado y fin de transacción."); 
                 EnTransaccionFinalizada(transaccion_); 
