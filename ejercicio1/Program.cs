@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +34,7 @@ namespace ejercicio1
 
             public void Pago(Transaccion transaccion_)
             {
-                Console.WriteLine($"Procesando transacción de pago con ID: {transaccion_.identificador} y fecha: {transaccion_.fechaTransaccion}"); // Mensaje añadido para claridad
+                Console.WriteLine($"ID transacción: {transaccion_.identificador} con fecha: {transaccion_.fechaTransaccion}"); // Mensaje añadido para claridad
                 Thread.Sleep(2000); 
                 Console.WriteLine("Pago aprobado y fin de transacción."); 
                 EnTransaccionFinalizada(transaccion_); 
@@ -45,7 +45,7 @@ namespace ejercicio1
         {
             public void EnviarNotificacion(object sender, TransaccionEventArgs e)
             {
-                Console.WriteLine($"El gestor de email ha enviado una notificación: El pago de la transacción {e.transaccion.identificador} fue procesado correctamente el {e.transaccion.fechaTransaccion}.");
+                Console.WriteLine($"Notificación: El pago de la transacción {e.transaccion.identificador} fue creado correctamente el {e.transaccion.fechaTransaccion}.");
             }
         }
 
@@ -55,7 +55,7 @@ namespace ejercicio1
           
             public void EmitirFactura(object sender, TransaccionEventArgs e) 
             {
-                Console.WriteLine($"La factura correspondiente a la transacción {e.transaccion.identificador} fue emitida con fecha {e.transaccion.fechaTransaccion}.");
+                Console.WriteLine($"La factura de la transacción {e.transaccion.identificador} fue creada el {e.transaccion.fechaTransaccion}.");
             }
         }
 
